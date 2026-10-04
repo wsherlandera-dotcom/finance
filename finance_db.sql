@@ -1,0 +1,11 @@
+CREATE DATABASE IF NOT EXISTS finance_db;
+
+USE finance_db;
+
+CREATE TABLE IF NOT EXISTS expenses (
+    id BIGINT NOT NULL AUTO_INCREMENT,
+    description VARCHAR(255) NOT NULL,
+    amount DOUBLE NOT NULL,
+    date DATE NOT NULL,
+    PRIMARY KEY (id)
+);
