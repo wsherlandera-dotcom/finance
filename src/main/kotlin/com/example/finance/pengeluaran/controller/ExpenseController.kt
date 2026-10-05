@@ -18,14 +18,14 @@ class ExpenseController(private val expenseService: ExpenseService) {
         expenseService.getAllExpenses()
 
     @GetMapping("/{id}")
-    fun getExpenseById(@PathVariable id: Long): Expense? =
+    fun getExpenseById(@PathVariable id: Long): Expense =
         expenseService.getExpenseById(id)
 
     @PutMapping("/{id}")
     fun updateExpense(
         @PathVariable id: Long,
         @Valid @RequestBody expense: Expense
-    ): Expense? =
+    ): Expense =
         expenseService.updateExpense(id, expense)
 
     @DeleteMapping("/{id}")
